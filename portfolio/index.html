@@ -6,18 +6,18 @@ title: Portfolio
 <section class="content">
   <h2>Portfolio</h2>
 
-  <p>Check out my images below!</p>
+  <p>Check out my items below!</p>
 </section>
 
 <ul class="entries">
-  {% for post in site.posts %}
+  {% for item in site.portfolio_items %}
 
   <li>
-    <a href="{{ post.url }}">
-      <img src="{{ post.image }}" />
-      <h3>{{ post.title }}</h3>
+    <a href="{{ item.url }}">
+      <img src="{{ item.image }}" />
+      <h3>{{ item.title }}</h3>
     </a>
-    <img src="{{ post.feat-img }}" alt="">
+    <img src="{{ item.feat-img }}" alt="">
   </li>
 
   {% endfor %}

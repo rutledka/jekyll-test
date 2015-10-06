@@ -1,4 +1,8 @@
 ---
-auto: true
-permalink: /:categories/:title.html
+collections:
+  portfolio_items:
+    output: true
+    permalink: /portfolio/:title.html
+
+permalink: /:title.html
 ---
