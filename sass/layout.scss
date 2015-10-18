@@ -5,7 +5,7 @@ header {
   width: 100%;
   top: 0;
   background-color: $bg-color;
-
+  z-index: 5;
 }
 
 nav {
@@ -21,6 +21,11 @@ nav {
     float: left;
     width: 25%;
     list-style-type: none;
+    font-size: 14px;
+
+    @include breakpoint(tablet) {
+      font-size: 16px;
+    }
   }
 
   a {
@@ -52,6 +57,10 @@ nav {
     &.active {
       border-bottom: 5px solid $blue;
       color: $blue;
+
+      &:before {
+        background-position: 20px 0;
+      }
 
       &.portfolio {
         &:before {
@@ -101,4 +110,17 @@ nav {
 .content {
   margin-top: 100px;
   margin-top: rem(100);
+  min-height: 75vh;
+}
+
+footer {
+  padding: 10px 0;
+  text-align: center;
+  margin-top: 30px;
+  margin-top: rem(30);
+
+  .dots {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }

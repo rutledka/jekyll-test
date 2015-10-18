@@ -1,2 +1,36 @@
-/* indclude module styles here or include separate module files from the modules directory */
+/* include module styles here or include separate module files from the modules directory */
 
+.categories {
+  margin-bottom: 12px;
+  margin-bottom: rem(12);
+
+  span {
+    padding: 5px 10px;
+    background-color: $blue-alt;
+    border-radius: 15px;
+    color: $bg-color;
+    font-size: 12px;
+    font-size: rem(12);
+
+    + span {
+      margin-left: 5px;
+    }
+
+    //TO DO: add colors for languages and output classes into <span>
+    &.javascript {
+
+    }
+
+    &.php {
+
+    }
+
+    &.wordpress {
+
+    }
+
+    &.responsive {
+
+    }
+  }
+}

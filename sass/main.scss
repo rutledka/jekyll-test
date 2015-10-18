@@ -18,4 +18,4 @@ $bg-color: #fcfcfc;
 @import "modules";		// Common elements throughout the site
 
 // Sections (page specific styles, overwrides module styles) - use responsibly
-@import "./sections/single";
+@import "./sections/blog";

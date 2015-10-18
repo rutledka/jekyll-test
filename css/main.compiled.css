@@ -353,7 +353,7 @@ td,
 th {
   padding: 0; }
 
-.row:after, nav ul:after {
+.row:after, nav ul:after, .post-navigation:after {
   content: "";
   display: table;
   clear: both; }
@@ -405,11 +405,11 @@ th {
   .col-off-3 {
     margin-left: 25%; } }
 
-.col-4, .single-sidebar {
+.col-4, .sidebar {
   padding-left: 5px;
   padding-right: 5px; }
   @media all and (min-width: 768px) {
-    .col-4, .single-sidebar {
+    .col-4, .sidebar {
       width: 33.33333%;
       float: left; } }
 
@@ -570,7 +570,7 @@ p {
 
 blockquote {
   background-color: #e6e6e6;
-  border-left: 5px solid #60ccfd;
+  border-left: 5px solid #03A9F4;
   color: #7b7b7b;
   margin: 0;
   margin-bottom: 12px;
@@ -605,7 +605,8 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: #fcfcfc; }
+  background-color: #fcfcfc;
+  z-index: 5; }
 
 nav ul {
   font-family: "Bitter", Georgia, serif;
@@ -616,7 +617,11 @@ nav ul {
 nav li {
   float: left;
   width: 25%;
-  list-style-type: none; }
+  list-style-type: none;
+  font-size: 14px; }
+  @media all and (min-width: 768px) {
+    nav li {
+      font-size: 16px; } }
 
 nav a {
   border-bottom: 5px solid transparent;
@@ -651,6 +656,9 @@ nav a {
   nav a.active {
     border-bottom: 5px solid #03A9F4;
     color: #03A9F4; }
+    nav a:hover:before,
+    nav a.active:before {
+      background-position: 20px 0; }
     nav a:hover.portfolio:before,
     nav a.active.portfolio:before {
       background-position: 20px -20px; }
@@ -675,9 +683,32 @@ nav a {
 
 .content {
   margin-top: 100px;
-  margin-top: 6.25rem; }
+  margin-top: 6.25rem;
+  min-height: 75vh; }
 
-/* indclude module styles here or include separate module files from the modules directory */
+footer {
+  padding: 10px 0;
+  text-align: center;
+  margin-top: 30px;
+  margin-top: 1.875rem; }
+  footer .dots {
+    font-size: 20px;
+    font-weight: bold; }
+
+/* include module styles here or include separate module files from the modules directory */
+.categories {
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+  .categories span {
+    padding: 5px 10px;
+    background-color: #0286c2;
+    border-radius: 15px;
+    color: #fcfcfc;
+    font-size: 12px;
+    font-size: 0.75rem; }
+    .categories span + span {
+      margin-left: 5px; }
+
 .sidebar-interior .posts {
   list-style-type: none;
   padding: 0; }
@@ -695,5 +726,19 @@ nav a {
   .sidebar-interior {
     border-left: 5px solid #03A9F4;
     padding: 10px 25px;
-    position: fixed;
     margin-top: 20px; } }
+
+.index .sidebar-interior {
+  text-align: center; }
+  .index .sidebar-interior .author-image {
+    border-radius: 100%; }
+
+.post-navigation {
+  display: none; }
+  @media all and (min-width: 768px) {
+    .post-navigation {
+      display: block; }
+      .post-navigation .prev {
+        float: left; }
+      .post-navigation .next {
+        float: right; } }

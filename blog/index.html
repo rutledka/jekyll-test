@@ -4,22 +4,45 @@ title: Blog
 active: blog
 ---
 
-<section class="content">
-  <h2>Blog</h2>
+<section class="container content">
+  <div class="row">
+    <div class="col-8">
+      <h2>Blog</h2>
 
-  <p>Check out my Posts below!</p>
+      <p>Check out my Posts below!</p>
+
+      <ul class="post-index">
+        {% for post in paginator.posts %}
+
+        <li>
+          <a href="{{ post.url }}">
+            <img src="{{ post.image }}" />
+            <h3>{{ post.title }}</h3>
+          </a>
+          {% if post.categories %}
+            <div class="categories">
+              {% for category in post.categories%}
+                <span>{{category}}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <p>{{ post.excerpt }}</p>
+        </li>
+
+        {% endfor %}
+      </ul>
+      {% if paginator.total_pages > 1 %}
+        <div class="pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">Previous</a>
+          {% endif %}
+          <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">Next</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    {% include blog-index-sidebar.html %}
+  </div>
 </section>
-
-<ul class="entries">
-  {% for post in site.posts %}
-
-  <li>
-    <a href="{{ post.url }}">
-      <img src="{{ post.image }}" />
-      <h3>{{ post.title }}</h3>
-    </a>
-    <img src="{{ post.feat-img }}" alt="">
-  </li>
-
-  {% endfor %}
-</ul>

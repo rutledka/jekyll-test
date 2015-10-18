@@ -65,7 +65,7 @@ p {
 
 blockquote {
   background-color: darken(#fff, 10%);
-  border-left: 5px solid lighten($blue, 20%);
+  border-left: 5px solid $blue; //lighten($blue, 20%);
   color: lighten($default, 35%);
   margin: 0;
   margin-bottom: 12px;

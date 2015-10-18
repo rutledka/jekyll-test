@@ -2,7 +2,12 @@
 collections:
   portfolio_items:
     output: true
-    permalink: /portfolio/:title.html
+    permalink: /portfolio/:title
 
-permalink: /:title.html
+excerpt_separator: "<!--more-->"
+
+paginate: 1
+paginate_path: "blog/page:num"
+
+permalink: /:title
 ---
