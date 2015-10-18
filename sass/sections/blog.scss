@@ -2,10 +2,16 @@
 
 .post {
   padding: 20px 0;
-border-top: 1px dotted lighten($default, 50%);
+  border-top: 1px dotted lighten($default, 50%);
   // + .post {
   //   border-top: 1px solid lighten($default, 50%);
   // }
+
+  .date {
+      font-size: 12px;
+      font-size: rem(12);
+      font-weight: bold;
+  }
 }
 
 
@@ -36,12 +42,6 @@ border-top: 1px dotted lighten($default, 50%);
 
     a {
       display: block;
-    }
-
-    span {
-      font-size: 12px;
-      font-size: rem(12);
-      font-weight: bold;
     }
   }
 

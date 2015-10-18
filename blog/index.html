@@ -11,25 +11,28 @@ active: blog
 
       <p>Lorem ipsum dolor sit amet, vero labore dissentias ne qui, ius salutatus repudiare in, sensibus posidonium vis no. Solum soleat at est, recusabo explicari ne eos, nec ne enim rebum quando.</p>
 
-      <div class="post-index">
-        {% for post in paginator.posts %}
+      {% if paginator.posts %}
+        <div class="post-index">
+          {% for post in paginator.posts %}
 
-        <div class="post">
-          <a href="{{ post.url }}">
-            <h3>{{ post.title }}</h3>
-          </a>
-          {% if post.categories %}
-            <div class="categories">
-              {% for category in post.categories%}
-                <span>{{category}}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
-          {{ post.excerpt }}
+          <div class="post">
+            <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+            <span class="date">{{ post.date | date_to_string }}</span>
+            {% if post.categories %}
+              <div class="categories">
+                {% for category in post.categories%}
+                  <span>{{category}}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            {{ post.excerpt }}
+          </div>
+
+          {% endfor %}
         </div>
-
-        {% endfor %}
-      </div>
+      {% else %}
+        <h4>Sorry! it looks like there isn't anything here yet. :( Please check again later</h4>
+      {% endif %}
 
       {% if paginator.total_pages > 1 %}
         <div class="pagination">

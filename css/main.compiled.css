@@ -703,6 +703,7 @@ footer {
   margin-bottom: 12px;
   margin-bottom: 0.75rem; }
   .categories span {
+    display: inline-block;
     padding: 5px 10px;
     background-color: #0286c2;
     border-radius: 15px;
@@ -711,10 +712,24 @@ footer {
     font-size: 0.75rem; }
     .categories span + span {
       margin-left: 5px; }
+    .categories span.javascript {
+      background-color: #E5A029; }
+    .categories span.php {
+      background-color: #4F5B93; }
+    .categories span.responsive {
+      background-color: #000; }
+    .categories span.sass {
+      background-color: #c6538c; }
+    .categories span.wordpress {
+      background-color: #838CC7; }
 
 .post {
   padding: 20px 0;
   border-top: 1px dotted #a2a2a2; }
+  .post .date {
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: bold; }
 
 .sidebar-interior .posts {
   list-style-type: none;
@@ -724,10 +739,6 @@ footer {
     margin-bottom: 0.625rem; }
   .sidebar-interior .posts a {
     display: block; }
-  .sidebar-interior .posts span {
-    font-size: 12px;
-    font-size: 0.75rem;
-    font-weight: bold; }
 
 @media all and (min-width: 768px) {
   .sidebar-interior {
@@ -758,3 +769,25 @@ footer {
     margin-right: 10px; }
   .pagination .next {
     margin-left: 10px; }
+
+.item {
+  display: block;
+  position: relative;
+  text-align: center;
+  max-width: 300px;
+  margin: 20px auto; }
+  @media all and (min-width: 768px) {
+    .item {
+      max-width: 100%;
+      margin: 15px; } }
+  .item img {
+    display: block; }
+  .item .info {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    .item .info .categories {
+      margin-bottom: 0; }

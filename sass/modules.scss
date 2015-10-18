@@ -5,6 +5,7 @@
   margin-bottom: rem(12);
 
   span {
+    display: inline-block;
     padding: 5px 10px;
     background-color: $blue-alt;
     border-radius: 15px;
@@ -18,19 +19,23 @@
 
     //TO DO: add colors for languages and output classes into <span>
     &.javascript {
-
+      background-color: #E5A029;
     }
 
     &.php {
-
-    }
-
-    &.wordpress {
-
+      background-color: #4F5B93;
     }
 
     &.responsive {
+      background-color: #000;
+    }
 
+    &.sass {
+      background-color: #c6538c;
+    }
+
+    &.wordpress {
+      background-color: #838CC7;
     }
   }
 }

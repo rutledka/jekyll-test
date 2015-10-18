@@ -1,0 +1,29 @@
+.item {
+  display: block;
+  position: relative;
+  text-align: center;
+  max-width: 300px;
+  margin: 20px auto;
+
+  @include breakpoint(tablet) {
+    max-width: 100%;
+    margin: 15px;
+  }
+
+  img {
+    display: block;
+  }
+
+  .info {
+    padding: 10px;
+    background-color: rgba( 255,255,255, .3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .categories {
+      margin-bottom: 0;
+    }
+  }
+}

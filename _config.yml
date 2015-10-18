@@ -2,7 +2,7 @@
 collections:
   portfolio_items:
     output: true
-    permalink: /portfolio/:title
+    permalink: /portfolio/:title.html
 
 excerpt_separator: "<!--more-->"
 exclude: ['sass/']

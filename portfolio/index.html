@@ -4,22 +4,37 @@ title: Portfolio
 active: portfolio
 ---
 
-<section class="content">
-  <h2>Portfolio</h2>
-
-  <p>Check out my items below!</p>
+<section class="content portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Portfolio</h2>
+        <p>Check out my items below!</p>
+      </div>
+    </div>
+      {% if site.portfolio_items %}
+        <div class="items row">
+          {% for item in site.portfolio_items %}
+            <div class="col-4">
+              <a href="{{ item.url }}" class="item">
+                <img src="{{ item.image }}" />
+                <div class="info">
+                  <h4>{{ item.title }}</h4>
+                  {% if item.categories %}
+                    <div class="categories">
+                      {% for cat in item.categories %}
+                        <span class="{{cat}}">{{cat}}</span>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <h4>Sorry! it looks like there isn't anything here yet. :( Please check again later</h4>
+      {% endif %}
+    </div>
+  </div>
 </section>
-
-<ul class="entries">
-  {% for item in site.portfolio_items %}
-
-  <li>
-    <a href="{{ item.url }}">
-      <img src="{{ item.image }}" />
-      <h3>{{ item.title }}</h3>
-    </a>
-    <img src="{{ item.feat-img }}" alt="">
-  </li>
-
-  {% endfor %}
-</ul>
