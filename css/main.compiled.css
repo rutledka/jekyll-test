@@ -367,11 +367,11 @@ th {
   margin: 0 auto; }
 
 .row {
-  margin: 0 -5px; }
+  margin: 0 -10px; }
 
 .col-1 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-1 {
       width: 8.33333%;
@@ -382,8 +382,8 @@ th {
     margin-left: 8.33333%; } }
 
 .col-2 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-2 {
       width: 16.66667%;
@@ -394,8 +394,8 @@ th {
     margin-left: 16.66667%; } }
 
 .col-3 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-3 {
       width: 25%;
@@ -406,8 +406,8 @@ th {
     margin-left: 25%; } }
 
 .col-4, .sidebar {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-4, .sidebar {
       width: 33.33333%;
@@ -418,8 +418,8 @@ th {
     margin-left: 33.33333%; } }
 
 .col-5 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-5 {
       width: 41.66667%;
@@ -430,8 +430,8 @@ th {
     margin-left: 41.66667%; } }
 
 .col-6 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-6 {
       width: 50%;
@@ -442,8 +442,8 @@ th {
     margin-left: 50%; } }
 
 .col-7 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-7 {
       width: 58.33333%;
@@ -454,8 +454,8 @@ th {
     margin-left: 58.33333%; } }
 
 .col-8, .single {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-8, .single {
       width: 66.66667%;
@@ -466,8 +466,8 @@ th {
     margin-left: 66.66667%; } }
 
 .col-9 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-9 {
       width: 75%;
@@ -478,8 +478,8 @@ th {
     margin-left: 75%; } }
 
 .col-10 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-10 {
       width: 83.33333%;
@@ -490,8 +490,8 @@ th {
     margin-left: 83.33333%; } }
 
 .col-11 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-11 {
       width: 91.66667%;
@@ -502,8 +502,8 @@ th {
     margin-left: 91.66667%; } }
 
 .col-12 {
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
   @media all and (min-width: 768px) {
     .col-12 {
       width: 100%;
@@ -567,6 +567,8 @@ p {
   margin: 0;
   margin-bottom: 12px;
   margin-bottom: 0.75rem; }
+  p:last-child {
+    margin-bottom: 0; }
 
 blockquote {
   background-color: #e6e6e6;
@@ -689,10 +691,11 @@ nav a {
 footer {
   padding: 10px 0;
   text-align: center;
-  margin-top: 30px;
-  margin-top: 1.875rem; }
+  margin-top: 20px;
+  margin-top: 1.25rem; }
   footer .dots {
-    font-size: 20px;
+    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: bold; }
 
 /* include module styles here or include separate module files from the modules directory */
@@ -708,6 +711,10 @@ footer {
     font-size: 0.75rem; }
     .categories span + span {
       margin-left: 5px; }
+
+.post {
+  padding: 20px 0;
+  border-top: 1px dotted #a2a2a2; }
 
 .sidebar-interior .posts {
   list-style-type: none;
@@ -742,3 +749,12 @@ footer {
         float: left; }
       .post-navigation .next {
         float: right; } }
+
+.pagination {
+  max-width: 200px;
+  margin: 0 auto;
+  text-align: center; }
+  .pagination .prev {
+    margin-right: 10px; }
+  .pagination .next {
+    margin-left: 10px; }

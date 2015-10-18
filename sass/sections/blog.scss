@@ -1,9 +1,22 @@
+//blog index styles
+
+.post {
+  padding: 20px 0;
+border-top: 1px dotted lighten($default, 50%);
+  // + .post {
+  //   border-top: 1px solid lighten($default, 50%);
+  // }
+}
+
+
+//single post styles
 .single {
   @include breakpoint(tablet){
     @extend .col-8;
   }
 }
 
+//sidebar styles
 .sidebar {
   @include breakpoint(tablet){
     @extend .col-4;
@@ -39,6 +52,7 @@
     margin-top: 20px;
   }
 
+  //blog index sidebar
   .index & {
     text-align: center;
 
@@ -48,6 +62,7 @@
   }
 }
 
+//single post next/prev
 .post-navigation {
   @extend %clearfix;
   display: none;
@@ -62,5 +77,20 @@
     .next {
       float: right;
     }
+  }
+}
+
+//blog index pagination
+.pagination {
+  max-width: 200px;
+  margin: 0 auto;
+  text-align: center;
+
+  .prev {
+    margin-right: 10px;
+  }
+
+  .next {
+    margin-left: 10px;
   }
 }

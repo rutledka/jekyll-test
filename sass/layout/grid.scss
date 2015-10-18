@@ -1,6 +1,6 @@
 $siteWidth: 980px;
 $columns: 12;
-$gutters: 10px;
+$gutters: 20px;
 
 @mixin breakpoint($point) {
 	@if $point == mobile {

@@ -1,7 +1,7 @@
 {
   "name": "airtight-gulp",
   "version": "0.0.1",
-  "description": "automating tasks with gulp test",
+  "description": "automating tasks with gulp",
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp is running"

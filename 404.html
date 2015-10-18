@@ -1,7 +1,15 @@
 ---
 layout: default
 title: Home
-active: home
 ---
-
-<p>sorry, the page you selected does not exist</p>
+<section class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <p>sorry, the page you selected does not exist</p>
+        <p>Why don't you try one of the links above or to the right?</p>
+      </div>
+      {% include blog-post-sidebar.html %}
+    </div>
+  </div>
+</section>
