@@ -1,4 +1,4 @@
 #exclude generated site, node modules, and images
 _build/node_modules/**
-_site/**
+#_site/**
 img/**
