@@ -28,16 +28,6 @@ gulp.task('build-css', function() {
       .pipe(sourcemaps.write('../css/'))
       .pipe(gulp.dest('../css/'))
       .pipe(livereload());
-      //.pipe(autoprefixer());
-
-    /*gulp.src('../sass/main.scss')
-      .pipe(sass())
-      //.pipe(autoprefixer())
-      .pipe(concat('main.compiled.css'))
-      .pipe(gulp.dest('../css/'))
-      .pipe(minifyCSS())
-      .pipe(rename('main.compiled.min.css'))
-      .pipe(gulp.dest('../css/'));*/
 });
 
 gulp.task('build-js', function() {

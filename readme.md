@@ -1,4 +1,4 @@
-# Default Grunt Installation
+# Default Gulp Installation
 
 Updated: 9/3/2015
 
@@ -23,9 +23,9 @@ Install the contents of this package into your project’s webroot.
 
 ## Watching Files
 
-To have Grunt watch your files for changes, run this command from the build directory:
+To have Gulp watch your files for changes, run this command from the build directory:
 
-`grunt watch`
+`gulp watch`
 
 ## Install Node Modules
 
@@ -40,13 +40,6 @@ or
 ## CSS Sourcemap
 
 To use sourcemapping in your dev site, make sure to include `main.compiled.css` and not the minified version. Minification breaks the sourcemapping.
-
-If you receive a Sass error complaining about being unable to write the map file, do the following:
-
-1. Make sure the grunt-contrib-sass grunt module is up to date in `package.json`.
-`"grunt-contrib-sass": "~0.8.1"` or greater.
-2. Update your node modules:
-`npm update`
 
 ## LiveReload
 
@@ -65,15 +58,6 @@ To use live reload, make sure you install the [appropriate browser extension](ht
     	|--- /elites  /* Not touched by Grunt - load independently of other scripts. */
         |--- /grunts /* processed by Grunt into grunts.compiled.js and grunts.compiled.min.js */     
 
-
-## .hgignore
-
-Add these lines to your .hgignore file in your project to prevent adding the sass cache and node modules to your repo:
-
-    glob:*.sass-cache*
-    glob:*node_modules*
-
-All other files are fine to go in your repo.
 
 ## Development Dependencies
 

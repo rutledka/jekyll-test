@@ -659,8 +659,7 @@ nav a {
       background-position: 20px -40px; }
     nav a:hover.contact:before,
     nav a.active.contact:before {
-      background-position: 20px -61px;
-      padding-top: 19px; }
+      background-position: 20px -61px; }
   nav a.portfolio:before {
     background-position: 0 -20px; }
   nav a.blog:before {
