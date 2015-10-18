@@ -1,0 +1,11 @@
+.single {
+  @include breakpoint(tablet){
+    @extend .col-8;
+  }
+}
+
+.single-sidebar {
+  @include breakpoint(tablet){
+    @extend .col-4;
+  }
+}
