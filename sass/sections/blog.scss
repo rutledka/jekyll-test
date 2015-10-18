@@ -1,0 +1,66 @@
+.single {
+  @include breakpoint(tablet){
+    @extend .col-8;
+  }
+}
+
+.sidebar {
+  @include breakpoint(tablet){
+    @extend .col-4;
+  }
+}
+
+.sidebar-interior {
+
+  .posts {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+      margin-bottom: rem(10);
+    }
+
+    a {
+      display: block;
+    }
+
+    span {
+      font-size: 12px;
+      font-size: rem(12);
+      font-weight: bold;
+    }
+  }
+
+  @include breakpoint(tablet){
+    border-left: 5px solid $blue;
+    padding: 10px 25px;
+    //position: fixed;
+    margin-top: 20px;
+  }
+
+  .index & {
+    text-align: center;
+
+    .author-image {
+      border-radius: 100%;
+    }
+  }
+}
+
+.post-navigation {
+  @extend %clearfix;
+  display: none;
+
+  @include breakpoint(tablet) {
+    display: block;
+
+    .prev {
+      float: left;
+    }
+
+    .next {
+      float: right;
+    }
+  }
+}
