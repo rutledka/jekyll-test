@@ -2,23 +2,21 @@
 <html>
 <head>
   <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> {% if page.title %} {{ page.title }} | {% endif %} Khalil Rutledge, Front-End Web Developer </title>
-  <link rel="stylesheet" href="/css/styles.css" />
+  <script src="/js/elites/modernizr-custom.js"></script>
+  <link rel="stylesheet" href="/css/main.compiled.css" />
 </head>
 <body>
-
-  <div id="main">
-
-    <header>
-      <h1>Khalil Rutledge</h1>
-    <header>
-
-    <nav role="navigation">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
-      </ul>
-    </nav>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="/" class="{% if page.active == 'home' %}active{% endif %}">Home</a></li>
+          <li><a href="/portfolio/" class="{% if page.active == 'portfolio' %}active{% endif %} portfolio">Portfolio</a></li>
+          <li><a href="/blog/" class="{% if page.active == 'blog' %}active{% endif %} blog">Blog</a></li>
+          <li><a href="/contact/" class="{% if page.active == 'contact' %}active{% endif %} contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>

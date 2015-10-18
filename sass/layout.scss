@@ -1,1 +1,105 @@
+header {
+  //border-bottom: 1px solid $default;
+  box-shadow: lighten($default, 50%) 0px 2px 2px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: $bg-color;
 
+}
+
+nav {
+  ul {
+    font-family: $bitter;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    @extend %clearfix;
+  }
+
+  li {
+    float: left;
+    width: 25%;
+    list-style-type: none;
+  }
+
+  a {
+    border-bottom: 5px solid transparent;
+    color: $default;
+    display: block;
+    padding: 10px;
+    transition: border .3s ease, color .3s ease;
+    position: relative;
+
+    &:before {
+      content: '';
+      @include imageBlock(20px, 20px, url('../img/icon-sprite.png'));
+      margin: auto;
+      left:0;
+      right: 0;
+      margin-bottom: 5px;
+
+      @include breakpoint(tablet) {
+        left:auto;
+        right: auto;
+        margin-bottom: 0;
+        margin-right: 5px;
+        display: inline-block;
+      }
+    }
+
+    &:hover,
+    &.active {
+      border-bottom: 5px solid $blue;
+      color: $blue;
+
+      &.portfolio {
+        &:before {
+          background-position: 20px -20px;
+        }
+      }
+
+      &.blog {
+        &:before {
+          background-position: 20px -40px;
+        }
+      }
+
+      &.contact {
+        &:before {
+          background-position: 20px -61px;
+          padding-top: 19px;
+        }
+      }
+    }
+
+    &.portfolio {
+      &:before {
+        background-position: 0 -20px;
+      }
+    }
+
+    &.blog {
+      &:before {
+        background-position: 0 -40px;
+      }
+    }
+
+    &.contact {
+      &:before {
+        background-position: 0 -61px;
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 18px;
+  }
+}
+
+.content {
+  margin-top: 100px;
+  margin-top: rem(100);
+}

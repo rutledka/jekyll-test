@@ -1,7 +1,14 @@
 // Google Fonts
-
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,700|PT+Sans:700,700italic,400italic,400);
 // Variables
-$var: #900;
+$bitter: 'Bitter', Georgia, serif;
+$ptsans: 'PT Sans', Arial, sans-serif;
+
+$blue: #03A9F4;
+$blue-alt: darken($blue, 10%);
+$grey: #9E9E9E;
+$default: #222;
+$bg-color: #fcfcfc;
 // Base Imports
 @import "plugins";		// jQuery Plugins, Bootstrap, etc...
 @import "addins";		// Mixins, extensions, functions, etc...
@@ -11,6 +18,4 @@ $var: #900;
 @import "modules";		// Common elements throughout the site
 
 // Sections (page specific styles, overwrides module styles) - use responsibly
-
-// developer file - use responsibly
-@import "developer";
+@import "./sections/single";

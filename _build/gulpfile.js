@@ -7,7 +7,8 @@ var gulp   		  = require('gulp'),
     minifyCSS  = require('gulp-minify-css'),
     sourcemaps 	= require('gulp-sourcemaps'),
     rename      = require('gulp-rename'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    livereload = require('gulp-livereload');
 
 
 /* jshint task would be here */
@@ -25,7 +26,8 @@ gulp.task('build-css', function() {
         .pipe(minifyCSS())
         .pipe(rename('main.compiled.min.css'))
       .pipe(sourcemaps.write('../css/'))
-      .pipe(gulp.dest('../css/'));
+      .pipe(gulp.dest('../css/'))
+      .pipe(livereload());
       //.pipe(autoprefixer());
 
     /*gulp.src('../sass/main.scss')
@@ -43,13 +45,15 @@ gulp.task('build-js', function() {
     .pipe(sourcemaps.init())
       .pipe(concat('main.compiled.js'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('../js'));
+    .pipe(gulp.dest('../js'))
+    .pipe(livereload());
 });
 
 
 /* updated watch task to include sass */
 
 gulp.task('watch', function() {
+  livereload.listen();
   gulp.watch('../js/*.js', ['build-js']);
-  gulp.watch('../sass/*.scss', ['build-css']);
+  gulp.watch('../sass/**/*.scss', ['build-css']);
 });

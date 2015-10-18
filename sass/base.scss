@@ -1,1 +1,107 @@
 // global or element level styles
+body {
+  font-family: $ptsans;
+  font-size: 16px;
+  color: $default;
+  background-color: $bg-color;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $bitter;
+  font-weight: bold;
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+  font-size: rem(32);
+  margin-bottom: 16px;
+  margin-bottom: rem(16);
+}
+
+h2 {
+  font-size: 28px;
+  font-size: rem(28);
+  margin-bottom: 14px;
+  margin-bottom: rem(14);
+}
+
+h3 {
+  font-size: 24px;
+  font-size: rem(24);
+  margin-bottom: 12px;
+  margin-bottom: rem(12);
+}
+
+h4 {
+  font-size: 20px;
+  font-size: rem(20);
+  margin-bottom: 12px;
+  margin-bottom: rem(12);
+}
+
+h5, h6 {
+  font-size: 16px;
+  font-size: rem(16);
+  margin-bottom: 12px;
+  margin-bottom: rem(12);
+}
+
+ul,
+ol {
+  margin: 0;
+  margin-bottom: 12px;
+  margin-bottom: rem(12);
+  padding-left: 30px;
+  padding-left: rem(30);
+}
+
+p {
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 12px;
+  margin-bottom: rem(12);
+}
+
+blockquote {
+  background-color: darken(#fff, 10%);
+  border-left: 5px solid lighten($blue, 20%);
+  color: lighten($default, 35%);
+  margin: 0;
+  margin-bottom: 12px;
+  margin-bottom: rem(12);
+  padding: 20px;
+  padding: rem(20);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  transition: .2s ease all;
+
+  &:hover {
+    color: $blue-alt;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// img utility classes
+@include breakpoint(tablet){
+  .align-left {
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+
+  .align-right {
+    float: right;
+    margin: 0 0 20px 20px;
+  }
+}

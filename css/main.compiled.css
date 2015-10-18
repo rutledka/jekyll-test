@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,700|PT+Sans:700,700italic,400italic,400);
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -352,7 +353,7 @@ td,
 th {
   padding: 0; }
 
-.row:after {
+.row:after, nav ul:after {
   content: "";
   display: table;
   clear: both; }
@@ -362,7 +363,7 @@ th {
 
 .container {
   width: 94%;
-  max-width: none;
+  max-width: 980px;
   margin: 0 auto; }
 
 .row {
@@ -404,11 +405,11 @@ th {
   .col-off-3 {
     margin-left: 25%; } }
 
-.col-4 {
+.col-4, .single-sidebar {
   padding-left: 5px;
   padding-right: 5px; }
   @media all and (min-width: 768px) {
-    .col-4 {
+    .col-4, .single-sidebar {
       width: 33.33333%;
       float: left; } }
 
@@ -452,11 +453,11 @@ th {
   .col-off-7 {
     margin-left: 58.33333%; } }
 
-.col-8 {
+.col-8, .single {
   padding-left: 5px;
   padding-right: 5px; }
   @media all and (min-width: 768px) {
-    .col-8 {
+    .col-8, .single {
       width: 66.66667%;
       float: left; } }
 
@@ -512,5 +513,188 @@ th {
   .col-off-12 {
     margin-left: 100%; } }
 
+body {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 16px;
+  color: #222;
+  background-color: #fcfcfc; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bitter", Georgia, serif;
+  font-weight: bold;
+  margin: 0; }
+
+h1 {
+  font-size: 32px;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
+h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin-bottom: 14px;
+  margin-bottom: 0.875rem; }
+
+h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+
+h4 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+
+h5, h6 {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+
+ul,
+ol {
+  margin: 0;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+  padding-left: 30px;
+  padding-left: 1.875rem; }
+
+p {
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem; }
+
+blockquote {
+  background-color: #e6e6e6;
+  border-left: 5px solid #60ccfd;
+  color: #7b7b7b;
+  margin: 0;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+  padding: 20px;
+  padding: 1.25rem; }
+  blockquote p:last-child {
+    margin-bottom: 0; }
+
+a {
+  color: #03A9F4;
+  text-decoration: none;
+  -webkit-transition: .2s ease all;
+          transition: .2s ease all; }
+  a:hover {
+    color: #0286c2; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+@media all and (min-width: 768px) {
+  .align-left {
+    float: left;
+    margin: 0 20px 20px 0; }
+  .align-right {
+    float: right;
+    margin: 0 0 20px 20px; } }
+
+header {
+  box-shadow: #a2a2a2 0px 2px 2px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fcfcfc; }
+
+nav ul {
+  font-family: "Bitter", Georgia, serif;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+
+nav li {
+  float: left;
+  width: 25%;
+  list-style-type: none; }
+
+nav a {
+  border-bottom: 5px solid transparent;
+  color: #222;
+  display: block;
+  padding: 10px;
+  -webkit-transition: border 0.3s ease, color 0.3s ease;
+          transition: border 0.3s ease, color 0.3s ease;
+  position: relative; }
+  nav a:before {
+    content: '';
+    width: 20px;
+    height: 0px;
+    background: url("../img/icon-sprite.png");
+    margin: 0;
+    padding: 20px 0 0;
+    display: block;
+    overflow: hidden;
+    outline: none !important;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin-bottom: 5px; }
+    @media all and (min-width: 768px) {
+      nav a:before {
+        left: auto;
+        right: auto;
+        margin-bottom: 0;
+        margin-right: 5px;
+        display: inline-block; } }
+  nav a:hover,
+  nav a.active {
+    border-bottom: 5px solid #03A9F4;
+    color: #03A9F4; }
+    nav a:hover.portfolio:before,
+    nav a.active.portfolio:before {
+      background-position: 20px -20px; }
+    nav a:hover.blog:before,
+    nav a.active.blog:before {
+      background-position: 20px -40px; }
+    nav a:hover.contact:before,
+    nav a.active.contact:before {
+      background-position: 20px -61px;
+      padding-top: 19px; }
+  nav a.portfolio:before {
+    background-position: 0 -20px; }
+  nav a.blog:before {
+    background-position: 0 -40px; }
+  nav a.contact:before {
+    background-position: 0 -61px; }
+
+@media all and (min-width: 768px) {
+  nav {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 18px; } }
+
+.content {
+  margin-top: 100px;
+  margin-top: 6.25rem; }
+
 /* indclude module styles here or include separate module files from the modules directory */
-/* if you have to, use this file for quick css insertions */
+.sidebar-interior .posts {
+  list-style-type: none;
+  padding: 0; }
+  .sidebar-interior .posts li {
+    margin-bottom: 10px;
+    margin-bottom: 0.625rem; }
+  .sidebar-interior .posts a {
+    display: block; }
+  .sidebar-interior .posts span {
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: bold; }
+
+@media all and (min-width: 768px) {
+  .sidebar-interior {
+    border-left: 5px solid #03A9F4;
+    padding: 10px 25px;
+    position: fixed;
+    margin-top: 20px; } }
