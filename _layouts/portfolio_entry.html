@@ -8,11 +8,11 @@ layout: default
       {% if page.categories %}
         <div class="categories">
           {% for category in page.categories%}
-            <span>{{category}}</span>
+            <span class="{{category}}">{{category}}</span>
           {% endfor %}
         </div>
       {% endif %}
-      <img src="{{ page.image }}" />
+      <img src="{{ page.feat-image }}" />
       {{ content }}
       <div class="post-navigation">
         {% if page.previous.url %}
