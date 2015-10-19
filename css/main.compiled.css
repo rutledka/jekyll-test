@@ -646,7 +646,8 @@ nav a {
     margin: auto;
     left: 0;
     right: 0;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+    background-size: 40px 80px; }
     @media all and (min-width: 768px) {
       nav a:before {
         left: auto;

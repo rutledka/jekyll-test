@@ -43,6 +43,7 @@ nav {
       left:0;
       right: 0;
       margin-bottom: 5px;
+      background-size: 40px 80px;
 
       @include breakpoint(tablet) {
         left:auto;
