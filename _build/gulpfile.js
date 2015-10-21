@@ -1,34 +1,36 @@
 /* file: gulpfile.js */
 
-var gulp   		  = require('gulp'),
-    jshint      = require('gulp-jshint'),
-    sass   		  = require('gulp-sass'),
-    concat 	  	= require('gulp-concat'),
-    minifyCSS  = require('gulp-minify-css'),
-    sourcemaps 	= require('gulp-sourcemaps'),
-    rename      = require('gulp-rename'),
-    autoprefixer = require('gulp-autoprefixer'),
-    livereload = require('gulp-livereload');
+var gulp          = require('gulp'),
+    autoprefixer  = require('gulp-autoprefixer'),
+    concat        = require('gulp-concat'),
+    cmq           = require('gulp-combine-mq'),
+    jshint        = require('gulp-jshint'),
+    livereload    = require('gulp-livereload'),
+    minifyCSS     = require('gulp-minify-css'),
+    rename        = require('gulp-rename'),
+    sass          = require('gulp-sass'),
+    sourcemaps    = require('gulp-sourcemaps');
 
-
-/* jshint task would be here */
+/* build css */
 
 gulp.task('build-css', function() {
   gulp.src('../sass/main.scss')
-    	.pipe(sourcemaps.init())
-        .pipe(sass({
-          //outputStyle: 'compressed',
-          errLogToConsole: true
-        }))
-        .pipe(autoprefixer())
-        .pipe(concat('main.compiled.css'))
-        .pipe(gulp.dest('../css/'))
-        .pipe(minifyCSS())
-        .pipe(rename('main.compiled.min.css'))
-      .pipe(sourcemaps.write('../css/'))
+    .pipe(sourcemaps.init())
+      .pipe(sass()).on('error', sass.logError)
+      .pipe(autoprefixer({
+        browsers: ['last 3 versions', 'ie >= 8'],
+      }))
+      .pipe(concat('main.compiled.css'))
+      .pipe(cmq({ beautify: false }))
       .pipe(gulp.dest('../css/'))
-      .pipe(livereload());
+      .pipe(minifyCSS())
+      .pipe(rename('main.compiled.min.css'))
+    .pipe(sourcemaps.write('../css/'))
+    .pipe(gulp.dest('../css/'))
+    .pipe(livereload());
 });
+
+/* build js */
 
 gulp.task('build-js', function() {
   gulp.src(['../js/grunts/*.js','../js/base.js'])

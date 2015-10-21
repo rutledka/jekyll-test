@@ -38,12 +38,12 @@ nav {
 
     &:before {
       content: '';
-      @include imageBlock(20px, 20px, url('../img/icon-sprite.png'));
+      @include imageBlock(15px, 15px, url('../img/icon-sprite.png'));
       margin: auto;
       left:0;
       right: 0;
       margin-bottom: 5px;
-      background-size: 40px 80px;
+      background-size: 30px 60px;
 
       @include breakpoint(tablet) {
         left:auto;
@@ -60,44 +60,49 @@ nav {
       color: $blue;
 
       &:before {
-        background-position: 20px 0;
+        background-position: 15px 0;
       }
 
       &.portfolio {
         &:before {
-          background-position: 20px -20px;
+          background-position: 15px -15px;
         }
       }
 
       &.blog {
         &:before {
-          background-position: 20px -40px;
+          background-position: 15px -30px;
         }
       }
 
       &.contact {
         &:before {
-          background-position: 20px -61px;
+          background-position: 15px -46px;
         }
       }
     }
 
     &.portfolio {
       &:before {
-        background-position: 0 -20px;
+        background-position: 0 -15px;
       }
     }
 
     &.blog {
       &:before {
-        background-position: 0 -40px;
+        background-position: 0 -30px;
       }
     }
 
     &.contact {
       &:before {
-        background-position: 0 -61px;
+        background-position: 0 -46px;
       }
+    }
+
+    &:visited,
+    &:focus {
+      outline: none;
     }
   }
 

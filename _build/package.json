@@ -1,7 +1,7 @@
 {
   "name": "airtight-gulp",
   "version": "0.0.1",
-  "description": "automating tasks with gulp",
+  "description": "automating tasks with gulp test",
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp is running"
@@ -19,6 +19,7 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
+    "gulp-combine-mq": "^0.4.0",
     "gulp-concat": "^2.6.0",
     "gulp-jshint": "^1.11.2",
     "gulp-livereload": "^3.8.1",

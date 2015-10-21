@@ -6,9 +6,8 @@
 
   span {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 4px 8px;
     background-color: $blue-alt;
-    border-radius: 15px;
     color: $bg-color;
     font-size: 12px;
     font-size: rem(12);
@@ -37,5 +36,20 @@
     &.wordpress {
       background-color: #838CC7;
     }
+  }
+}
+
+.btn {
+  background-color: transparent;
+  border: 3px solid $blue;
+  color: $blue;
+  display: inline-block;
+  padding: 5px 15px;
+  transition: .3s all ease;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $blue;
+    color: #fff;
   }
 }

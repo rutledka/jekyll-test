@@ -1,0 +1,52 @@
+/* Contact Page Form */
+
+fieldset {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  box-shadow: none;
+  border: 2px solid #ccc;
+  padding: 15px 8px 5px;
+  margin-bottom: 25px;
+
+  &:focus {
+    + label {
+      top: -25px;
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+
+  @include breakpoint(tablet) {
+     margin-bottom: 20px;
+  }
+}
+
+label {
+  font-family: $bitter;
+  position: absolute;
+  font-size: 13px;
+  top: 0;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  transition: all .4s ease;
+}
+
+input[type="submit"] {
+  width: auto;
+}
+
+@include breakpoint(tablet){
+  form {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
