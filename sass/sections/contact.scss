@@ -31,6 +31,7 @@ textarea {
 }
 
 label {
+  color: #666;
   font-family: $bitter;
   position: absolute;
   font-size: 13px;
@@ -42,6 +43,14 @@ label {
 
 input[type="submit"] {
   width: auto;
+}
+
+input[name="_gotcha"] {
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 @include breakpoint(tablet){
