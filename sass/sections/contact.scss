@@ -46,7 +46,8 @@ input[type="submit"] {
   width: auto;
 }
 
-input[name="_gotcha"] {
+input[name="_gotcha"],
+label[for="_gotcha"] {
   visibility: hidden;
   height: 0;
   margin: 0;
