@@ -9,7 +9,8 @@ var gulp          = require('gulp'),
     minifyCSS     = require('gulp-minify-css'),
     rename        = require('gulp-rename'),
     sass          = require('gulp-sass'),
-    sourcemaps    = require('gulp-sourcemaps');
+    sourcemaps    = require('gulp-sourcemaps'),
+    uglify        = require('gulp-uglify');
 
 /* build css */
 
@@ -21,7 +22,7 @@ gulp.task('build-css', function() {
         browsers: ['last 3 versions', 'ie >= 8'],
       }))
       .pipe(concat('main.compiled.css'))
-      .pipe(cmq({ beautify: false }))
+      .pipe(cmq({beautify:false}))
       .pipe(gulp.dest('../css/'))
       .pipe(minifyCSS())
       .pipe(rename('main.compiled.min.css'))
@@ -36,6 +37,9 @@ gulp.task('build-js', function() {
   gulp.src(['../js/grunts/*.js','../js/base.js'])
     .pipe(sourcemaps.init())
       .pipe(concat('main.compiled.js'))
+      .pipe(gulp.dest('../js'))
+      .pipe(rename('main.compiled.min.js'))
+      .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('../js'))
     .pipe(livereload());
@@ -46,6 +50,6 @@ gulp.task('build-js', function() {
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('../js/*.js', ['build-js']);
+  gulp.watch(['../js/*.js', '../js/grunts/*.js'], ['build-js']);
   gulp.watch('../sass/**/*.scss', ['build-css']);
 });
