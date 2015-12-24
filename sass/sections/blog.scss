@@ -77,18 +77,14 @@
 //single post next/prev
 .post-navigation {
   @extend %clearfix;
-  display: none;
+  margin-bottom: 20px;
 
-  @include breakpoint(tablet) {
-    display: block;
+  .prev {
+    float: left;
+  }
 
-    .prev {
-      float: left;
-    }
-
-    .next {
-      float: right;
-    }
+  .next {
+    float: right;
   }
 }
 
