@@ -5,7 +5,7 @@
     	{% for post in site.portfolio_items limit:5 %}
     	  <li>
           <a href="{{ site.base_url }}{{ post.url }}">{{ post.title }}</a>
-    		  <span>{{ post.date }}</span>
+    		  <span class="date">{{ post.date | date_to_string }}</span>
     	  </li>
     	{% endfor %}
     </ul>

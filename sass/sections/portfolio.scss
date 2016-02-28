@@ -2,17 +2,26 @@
   display: block;
   position: relative;
   text-align: center;
-  max-width: 300px;
-  margin: 20px auto;
+  //max-width: 300px;
+  //margin: 20px auto;
 
-  @include breakpoint(tablet) {
-    max-width: 100%;
-    margin: 15px;
-  }
 
-  img {
+  &:before {
+    content: '';
+    padding-top: 100%;
     display: block;
   }
+
+  &.one-two {
+    &:before {
+      padding-top: 50%;
+    }
+  }
+
+  // @include breakpoint(tablet) {
+  //   max-width: 100%;
+  //   margin: 15px;
+  // }
 
   .info {
     padding: 10px;
