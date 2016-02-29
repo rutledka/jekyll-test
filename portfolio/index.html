@@ -33,6 +33,9 @@ active: portfolio
                 </div>
               </a>
             </div>
+            {% if item.close_row %}
+          </div><div class="items row">
+            {% endif %}
           {% endfor %}
         </div>
       {% else %}

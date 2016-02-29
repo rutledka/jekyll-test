@@ -6,6 +6,12 @@ header {
   top: 0;
   background-color: $bg-color;
   z-index: 5;
+
+  &.home-active {
+    animation: dropDown;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+  }
 }
 
 nav {
@@ -25,6 +31,7 @@ nav {
 
     @include breakpoint(tablet) {
       font-size: 16px;
+      padding: 0 15px;
     }
   }
 
@@ -36,80 +43,132 @@ nav {
     transition: border .3s ease, color .3s ease;
     position: relative;
 
-    &:before {
-      content: '';
-      @include imageBlock(15px, 15px, url('../img/icon-sprite.png'));
-      margin: auto;
-      left:0;
-      right: 0;
-      margin-bottom: 5px;
-      background-size: 30px 60px;
-
-      @include breakpoint(tablet) {
-        left:auto;
-        right: auto;
-        margin-bottom: 0;
-        margin-right: 5px;
-        display: inline-block;
-      }
-    }
-
-    &:hover,
-    &.active {
-      border-bottom: 5px solid $blue;
-      color: $blue;
-
+    &.icon {
       &:before {
-        background-position: 15px 0;
+        content: '';
+        @include imageBlock(15px, 15px, url('../img/icon-sprite.png'));
+        margin: auto;
+        left:0;
+        right: 0;
+        margin-bottom: 5px;
+        background-size: 30px 60px;
+
+        @include breakpoint(tablet) {
+          left:auto;
+          right: auto;
+          margin-bottom: 0;
+          margin-right: 5px;
+          display: inline-block;
+        }
+      }
+
+      &:hover,
+      &.active {
+        border-bottom: 5px solid $blue;
+        color: $blue;
+
+        &:before {
+          background-position: 15px 0;
+        }
+
+        &.portfolio {
+          &:before {
+            background-position: 15px -15px;
+          }
+        }
+
+        &.blog {
+          &:before {
+            background-position: 15px -30px;
+          }
+        }
+
+        &.contact {
+          &:before {
+            background-position: 15px -46px;
+          }
+        }
       }
 
       &.portfolio {
         &:before {
-          background-position: 15px -15px;
+          background-position: 0 -15px;
         }
       }
 
       &.blog {
         &:before {
-          background-position: 15px -30px;
+          background-position: 0 -30px;
         }
       }
 
       &.contact {
         &:before {
-          background-position: 15px -46px;
+          background-position: 0 -46px;
         }
       }
-    }
 
-    &.portfolio {
-      &:before {
-        background-position: 0 -15px;
+      &:visited,
+      &:focus {
+        outline: none;
       }
-    }
-
-    &.blog {
-      &:before {
-        background-position: 0 -30px;
-      }
-    }
-
-    &.contact {
-      &:before {
-        background-position: 0 -46px;
-      }
-    }
-
-    &:visited,
-    &:focus {
-      outline: none;
     }
   }
 
   @include breakpoint(tablet) {
-    width: 75%;
+    //width: 75%;
     margin: 0 auto;
     font-size: 18px;
+    padding-top: 10px;
+
+    li {
+      width: 20%;
+    }
+  }
+}
+
+.logo {
+  padding: 0;
+  border: none;
+
+  h1 {
+    margin: 0;
+    font-family: $ptsans;
+    line-height: 1;
+  }
+
+  .home-active & {
+    .tag {
+      text-align: center;
+      // position: relative;
+      // animation-name: dropDown;
+      // animation-duration: 4s;
+      // animation-iteration-count: 1;
+
+     }
+
+    .open-tag,
+    .close-tag {
+      display: inline-block;
+      animation-duration: .5s;
+      animation-delay: 2.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    .open-tag {
+      transform-origin: right bottom;
+      animation-name: openTagDrop;
+     }
+
+    .close-tag {
+      transform-origin: left bottom;
+      animation-name: closeTagDrop;
+    }
+  }
+
+  @include breakpoint(lt-tablet) {
+    display: none;
   }
 }
 
@@ -129,5 +188,66 @@ footer {
     font-size: 30px;
     font-size: rem(30);
     font-weight: bold;
+  }
+}
+
+//logo animations on homepage
+
+@keyframes dropDown {
+  0% {
+    transform:translateY(-100%);
+  }
+  5% {
+    transform:translateY(-100%);
+  }
+  14% {
+    transform:translateY(0);
+  }
+  23% {
+    transform:translateY(-70%);
+  }
+  32% {
+    transform:translateY(0%);
+  }
+  41% {
+    transform:translateY(-50%);
+  }
+  50% {
+    transform:translateY(0%);
+  }
+  59% {
+    transform:translateY(-15%);
+  }
+  68% {
+    transform:translateY(0);
+  }
+  77% {
+    transform:translateY(-5%);
+  }
+  86% {
+    transform:translateY(0);
+  }
+  100% {
+    transform:translateY(0);
+  }
+}
+
+@keyframes openTagDrop {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes closeTagDrop {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(30deg);
   }
 }

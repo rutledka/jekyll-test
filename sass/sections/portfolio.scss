@@ -1,9 +1,16 @@
+.items {
+  + .items {
+    padding-top: 20px;
+  }
+}
+
 .item {
   display: block;
   position: relative;
   text-align: center;
   //max-width: 300px;
   //margin: 20px auto;
+  background-size: cover;
 
 
   &:before {
@@ -14,7 +21,11 @@
 
   &.one-two {
     &:before {
-      padding-top: 50%;
+      padding-top: 48%;
+
+      @include breakpoint(desktop) {
+        padding-top: 48.5%;
+      }
     }
   }
 
