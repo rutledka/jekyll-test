@@ -1,6 +1,0 @@
-//alert('plugin');
-
-/* add main sitewide js here */
-//alert('gulp working');
-
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBsdWdpbi5qcyIsImJhc2UuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQ0RBO0FBQ0E7QUFDQSIsImZpbGUiOiJtYWluLmNvbXBpbGVkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy9hbGVydCgncGx1Z2luJyk7XG4iLCIvKiBhZGQgbWFpbiBzaXRld2lkZSBqcyBoZXJlICovXG4vL2FsZXJ0KCdndWxwIHdvcmtpbmcnKTtcbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

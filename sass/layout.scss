@@ -11,6 +11,25 @@ header {
     animation: dropDown;
     animation-duration: 2.5s;
     animation-iteration-count: 1;
+
+    .open-tag,
+    .close-tag {
+      display: inline-block;
+      animation-duration: .5s;
+      animation-delay: 2.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    .open-tag {
+      transform-origin: right bottom;
+      animation-name: openTagDrop;
+     }
+
+    .close-tag {
+      transform-origin: left bottom;
+      animation-name: closeTagDrop;
+    }
   }
 }
 
@@ -128,8 +147,12 @@ nav {
 }
 
 .logo {
-  padding: 0;
-  border: none;
+  display: none;
+
+  a {
+      padding: 0;
+      border: none;
+  }
 
   h1 {
     margin: 0;
@@ -137,38 +160,8 @@ nav {
     line-height: 1;
   }
 
-  .home-active & {
-    .tag {
-      text-align: center;
-      // position: relative;
-      // animation-name: dropDown;
-      // animation-duration: 4s;
-      // animation-iteration-count: 1;
-
-     }
-
-    .open-tag,
-    .close-tag {
-      display: inline-block;
-      animation-duration: .5s;
-      animation-delay: 2.5s;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-    }
-
-    .open-tag {
-      transform-origin: right bottom;
-      animation-name: openTagDrop;
-     }
-
-    .close-tag {
-      transform-origin: left bottom;
-      animation-name: closeTagDrop;
-    }
-  }
-
-  @include breakpoint(lt-tablet) {
-    display: none;
+  @include breakpoint(tablet) {
+    display: block;
   }
 }
 
