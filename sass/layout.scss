@@ -44,10 +44,6 @@ nav {
     display: table-cell;
     vertical-align: bottom;
     font-size: 18px;
-
-    li {
-      width: 33%;
-    }
   }
 
   ul {
@@ -71,12 +67,16 @@ nav {
   }
 
   a {
-    padding: 10px 0 0px 10px;
+    padding: 10px 5px 0;
     border-bottom: 5px solid transparent;
     display: block;
     position: relative;
     color: $default;
     transition: border .3s ease, color .3s ease;
+
+    @include breakpoint(tablet) {
+      padding: 10px 0 0px 10px;
+    }
 
     &.icon {
       &:before {

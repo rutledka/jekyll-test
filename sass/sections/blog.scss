@@ -37,42 +37,39 @@
 
 //sidebar styles
 .sidebar {
-  @include breakpoint(tablet){
-    @extend .col-4;
+  &-interior {
+
+    .posts {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+        margin-bottom: rem(10);
+      }
+
+      a {
+        display: block;
+      }
+    }
+
+    @include breakpoint(tablet){
+      border-left: 3px solid $blue;
+      padding: 10px 25px;
+      margin-top: 20px;
+    }
+
+    //blog index sidebar
+    .index & {
+      text-align: center;
+    }
+
+    .author-image {
+      border-radius: 100%;
+    }
   }
 }
 
-.sidebar-interior {
-
-  .posts {
-    list-style-type: none;
-    padding: 0;
-
-    li {
-      margin-bottom: 10px;
-      margin-bottom: rem(10);
-    }
-
-    a {
-      display: block;
-    }
-  }
-
-  @include breakpoint(tablet){
-    border-left: 3px solid $blue;
-    padding: 10px 25px;
-    margin-top: 20px;
-  }
-
-  //blog index sidebar
-  .index & {
-    text-align: center;
-  }
-
-  .author-image {
-    border-radius: 100%;
-  }
-}
 
 //single post next/prev
 .post-navigation {
