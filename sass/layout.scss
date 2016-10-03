@@ -1,83 +1,93 @@
+/*
+ * HEADER STYLES BEGIN
+ */
+
 header {
   //border-bottom: 1px solid $default;
-  box-shadow: lighten($default, 50%) 0px 2px 2px;
-  position: fixed;
   width: 100%;
+  padding-top: 5px;
+  position: fixed;
   top: 0;
+  z-index: $z-top;
+  box-shadow: lighten($default, 50%) 0px 2px 2px;
   background-color: $bg-color;
-  z-index: 5;
 
-  &.home-active {
-    animation: dropDown;
-    animation-duration: 2.5s;
-    animation-iteration-count: 1;
-
-    .open-tag,
-    .close-tag {
-      display: inline-block;
-      animation-duration: .5s;
-      animation-delay: 2.5s;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-    }
-
-    .open-tag {
-      transform-origin: right bottom;
-      animation-name: openTagDrop;
-     }
-
-    .close-tag {
-      transform-origin: left bottom;
-      animation-name: closeTagDrop;
+  @include breakpoint(tablet) {
+    > .container {
+      display: table;
     }
   }
 }
 
+.site-mark {
+  margin: 0;
+  font-family: $ptsans;
+  text-align: center;
+  font-size: rem(28);
+
+  @include breakpoint(tablet) {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: left;
+    font-size: rem(36);
+  }
+
+  a {
+    color: $default;
+  }
+}
+
 nav {
+
+  @include breakpoint(tablet) {
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: bottom;
+    font-size: 18px;
+
+    li {
+      width: 33%;
+    }
+  }
+
   ul {
-    font-family: $bitter;
     margin: 0;
     padding: 0;
+    font-family: $bitter;
     text-align: center;
     @extend %clearfix;
   }
 
   li {
+    width: 33%;
     float: left;
-    width: 25%;
-    list-style-type: none;
     font-size: 14px;
+    list-style-type: none;
 
     @include breakpoint(tablet) {
-      font-size: 16px;
       padding: 0 15px;
+      font-size: 16px;
     }
   }
 
   a {
+    padding: 10px 0 0px 10px;
     border-bottom: 5px solid transparent;
-    color: $default;
     display: block;
-    padding: 10px 10px 5px;
-    transition: border .3s ease, color .3s ease;
     position: relative;
+    color: $default;
+    transition: border .3s ease, color .3s ease;
 
     &.icon {
       &:before {
         content: '';
         @include imageBlock(15px, 15px, url('../img/icon-sprite.png'));
-        margin: auto;
-        left:0;
-        right: 0;
-        margin-bottom: 5px;
         background-size: 30px 60px;
+        display: inline-block;
+        margin-right: 5px;
 
         @include breakpoint(tablet) {
-          left:auto;
-          right: auto;
           margin-bottom: 0;
-          margin-right: 5px;
-          display: inline-block;
         }
       }
 
@@ -90,38 +100,26 @@ nav {
           background-position: 15px 0;
         }
 
-        &.portfolio {
-          &:before {
-            background-position: 15px -15px;
-          }
-        }
-
-        &.blog {
+        &.icon-blog {
           &:before {
             background-position: 15px -30px;
           }
         }
 
-        &.contact {
+        &.icon-contact {
           &:before {
             background-position: 15px -46px;
           }
         }
       }
 
-      &.portfolio {
-        &:before {
-          background-position: 0 -15px;
-        }
-      }
-
-      &.blog {
+      &-blog {
         &:before {
           background-position: 0 -30px;
         }
       }
 
-      &.contact {
+      &-contact {
         &:before {
           background-position: 0 -46px;
         }
@@ -133,43 +131,33 @@ nav {
       }
     }
   }
-
-  @include breakpoint(tablet) {
-    //width: 75%;
-    margin: 0 auto;
-    font-size: 18px;
-    padding-top: 10px;
-
-    li {
-      width: 20%;
-    }
-  }
 }
 
-.logo {
-  display: none;
+/*
+ * HEADER STYLES END
+ */
 
-  a {
-      padding: 0;
-      border: none;
-  }
-
-  h1 {
-    margin: 0;
-    font-family: $ptsans;
-    line-height: 1;
-  }
-
-  @include breakpoint(tablet) {
-    display: block;
-  }
-}
+ /*
+  * .CONTENT STYLES BEGIN
+  */
 
 .content {
-  margin-top: 100px;
-  margin-top: rem(100);
-  min-height: 75vh;
+  min-height: 50vh;
+  margin-top: 75px;
+  margin-top: rem(75);
+  position: relative;
+  z-index: $z-bot;
+
+  @include breakpoint(tablet) {
+    margin-top: 50px;
+    margin-top: rem(50);
+  }
 }
+
+
+/*
+ * FOOTER STYLES BEGIN
+ */
 
 footer {
   padding: 10px 0;
@@ -184,63 +172,6 @@ footer {
   }
 }
 
-//logo animations on homepage
-
-@keyframes dropDown {
-  0% {
-    transform:translateY(-100%);
-  }
-  5% {
-    transform:translateY(-100%);
-  }
-  14% {
-    transform:translateY(0);
-  }
-  23% {
-    transform:translateY(-70%);
-  }
-  32% {
-    transform:translateY(0%);
-  }
-  41% {
-    transform:translateY(-50%);
-  }
-  50% {
-    transform:translateY(0%);
-  }
-  59% {
-    transform:translateY(-15%);
-  }
-  68% {
-    transform:translateY(0);
-  }
-  77% {
-    transform:translateY(-5%);
-  }
-  86% {
-    transform:translateY(0);
-  }
-  100% {
-    transform:translateY(0);
-  }
-}
-
-@keyframes openTagDrop {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(-30deg);
-  }
-}
-
-@keyframes closeTagDrop {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(30deg);
-  }
-}
+/*
+ * FOOTER STYLES BEGIN
+ */

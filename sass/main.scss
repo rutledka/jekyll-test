@@ -9,6 +9,18 @@ $blue-alt: darken($blue, 10%);
 $grey: #9E9E9E;
 $default: #222;
 $bg-color: #fcfcfc;
+
+// hero colors
+$brown-light: #957c43;
+$green-light: #21bf21;
+$blue-light: #7fcbdd;
+$blue-med: #00a3f6;
+$yellow-light: #f8f8a9;
+
+$z-top: 10;
+$z-mid: 5;
+$z-bot: 1;
+
 // Base Imports
 @import "plugins";		// jQuery Plugins, Bootstrap, etc...
 @import "addins";		// Mixins, extensions, functions, etc...

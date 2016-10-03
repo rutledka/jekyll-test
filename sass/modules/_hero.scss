@@ -1,0 +1,674 @@
+.hero {
+  height: 180px;
+  position: relative;
+  background-color: #565656;
+
+  @include breakpoint(tablet) {
+    height: 360px;
+  }
+}
+
+
+.scene {
+  position: absolute;
+  margin: auto;
+  width: 320px;
+  height: 180px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  // max-width: 320px;
+  // max-height: 180px
+
+  @include breakpoint(tablet) {
+    width: 640px;
+    height: 360px;
+  }
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+
+  &-1 {
+    z-index: $z-top;
+  }
+
+  &-2 {
+    z-index: $z-mid;
+  }
+
+  &-3 {
+    z-index: $z-bot;
+  }
+
+  div {
+    position: absolute;
+  }
+}
+
+/*
+*   .layer-1 styles START
+*/
+
+.desk {
+  width: 100%;
+  height: 2%;
+  background-color: $brown-light;
+  bottom: 0;
+  z-index: $z-top;
+}
+
+.plant {
+  width: 12%;
+  bottom: 2%;
+  left: 1%;
+  height: 50%;
+  z-index: $z-mid;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+    z-index: $z-mid;
+    background: #fff;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    box-shadow: inset 5px 0px 0px #fff;
+    animation: flicker-on-shadow 1s forwards;
+    animation-delay: 1s;
+  }
+
+  &-stalk {
+    width: 8%;
+    height: 100%;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $z-bot;
+    background-color: $green-light;
+    border-radius: 4px;
+  }
+
+  &-leaf {
+    width: 100%;
+    height: 20%;
+    top: 40%;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 48%;
+      position: absolute;
+      background-color: $green-light;
+    }
+
+    &:before {
+      left: 0;
+      border-bottom-left-radius: 90%;
+      border-top-right-radius: 90%;
+      top: 30%;
+      transform-origin: 100% 100%;
+      animation: leaf-dance 3s ease-in-out infinite;
+    }
+
+    &:after {
+      right: 0;
+      border-bottom-right-radius: 90%;
+      border-top-left-radius: 90%;
+      top: -30%;
+      transform-origin: 0 100%;
+      animation: leaf-dance-reverse 3s ease-in-out infinite;
+    }
+
+    + .plant-leaf {
+      top: 10%;
+    }
+  }
+}
+
+.lamp {
+  width: 30%;
+  height: 80%;
+  bottom: 2%;
+  right: 0;
+  z-index: $z-mid;
+
+  &-base {
+    width: 60%;
+    height: 4%;
+    bottom: 0;
+    right: 0;
+    background-color: $blue-med;
+    border-radius: 3px;
+    z-index: $z-top;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      background-color: #fff;
+    }
+
+    &:before {
+      height: 80%;
+      width: 75%;
+      border-radius: 3px;
+    }
+
+    &:after {
+      height: 180%;
+      width: 20%;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+    }
+  }
+
+  &-mid {
+    width: 100%;
+    height: 100%;
+    z-index: $z-bot;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: #fff;
+    }
+
+    &:before {
+      width: 5%;
+      height: 50%;
+      bottom: 47%;
+      right: 3%;
+      transform-origin: 50% 100%;
+      transform: rotate(-48deg);
+    }
+
+    &:after {
+      height: 50%;
+      width: 5%;
+      bottom: 1%;
+      right: 32%;
+      transform-origin: 50% 100%;
+      transform: rotate(23deg);
+    }
+
+    &-knob {
+      width: 12%;
+      height: 8%;
+      background-color: #fff;
+      top: 50%;
+      right: 0;
+      border-radius: 50%;
+    }
+  }
+
+  &-top {
+    width: 16%;
+    height: 10%;
+    top: 16%;
+    right: 44%;
+    background-color: $blue-med;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    transform-origin: 50% 0;
+    transform: rotate(42deg);
+    z-index: $z-top;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      //margin: auto;
+      left: 0;
+      right: 0;
+      //bottom: 100%;
+    }
+
+    &:before {
+      width: 300%;
+      height: 150%;
+      background-color: $blue-med;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      top: 50%;
+      left: -100%;
+      right: -100%;
+      z-index: $z-bot;
+    }
+
+    &:after {
+      width: 340%;
+      height: 30%;
+      background-color: #fff;
+      border-radius: 3px;
+      top: 190%;
+      left: -120%;
+      //right: -200%;
+      z-index: $z-mid;
+    }
+  }
+
+  &-light {
+    width: 120%;
+    height: 70%;
+    bottom: 0;
+    background-color: $yellow-light;
+    opacity: 0;
+    transform: rotate(-15deg);
+    transform-origin: 100% 0;
+    right: 20%;
+    top: 33%;
+    z-index: $z-bot;
+    animation: flicker-on 1s forwards;
+    animation-delay: 1s;
+  }
+}
+
+.laptop {
+  width: 35%;
+  height: 45%;
+  bottom: 2%;
+  left: 25%;
+  background-color: #a4a4a2;
+  border-radius: 8px;
+  z-index: $z-top;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+
+  &:before {
+    height: 3px;
+    width: 25%;
+    top: 5%;
+    background: linear-gradient(90deg, #52ab73 0%, #52ab73 25%, #d50f25 25%, #d50f25 50%, #eeb211 50%, #eeb211 75%, #3369e8 75%, #3369e8 100%);
+  }
+}
+
+.book {
+  height: 4%;
+  width: 15%;
+  background-color: #fff;
+  border: 3px solid #f00;
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  bottom: 2%;
+  left: 64%;
+  z-index: $z-mid;
+
+  &-1 {
+    height: 1%;
+    width: 15%;
+    bottom: 6%;
+    left: 65%;
+    background-color: $blue-med;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    z-index: $z-mid;
+  }
+
+  &-2 {
+    height: 4%;
+    width: 15%;
+    background-color: #fff;
+    border: 3px solid $green-light;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    bottom: 7%;
+    left: 63%;
+    z-index: $z-mid;
+  }
+}
+
+.coffee {
+  width: 7%;
+  height: 15%;
+  bottom: 11%;
+  left: 67%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: inset 5px 0px 0px #fff;
+  z-index: $z-top;
+  animation: flicker-on-shadow 1s forwards;
+  animation-delay: 1s;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 10%;
+    height: 25%;
+    position: absolute;
+    background-color: #fff;
+    bottom: 110%;
+    border-radius: 3px;
+  }
+
+  &:before {
+    left: 33%;
+    animation: steam 2.5s ease infinite;
+  }
+
+  &:after {
+    left: 66%;
+    animation: steam 3s ease infinite;
+//    animation-delay: 1s;
+    bottom: 130%;
+  }
+
+  &-handle {
+    width: 40%;
+    height: 50%;
+    left: 85%;
+    top: 25%;
+    border: 3px solid #fff;
+    border-radius: 15%;
+    z-index: $z-bot;
+  }
+
+  &-brew {
+    width: 75%;
+    height: 8%;
+    margin: auto;
+    background-color: #471803;
+    border-radius: 5px;
+    top: 5%;
+    left: 0;
+    right: 0;
+  }
+}
+
+.glass {
+  width: 8%;
+  height: 20%;
+  bottom: 2%;
+  left: 15%;
+  background-color: rgba(255, 255, 255, .7);
+  border-radius: 3px 3px 40% 40%;
+  z-index: $z-top;
+  // box-shadow: inset 5px 0px 0px #fff;
+  // animation: flicker-on-shadow 1s forwards;
+  // animation-delay: 1s;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 60%;
+    width: 80%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 6%;
+    background-color: $blue-light;
+    border-radius: 0 0 60% 60%;
+  }
+}
+
+/*
+*   .layer-1 styles END
+*/
+
+/*
+*   .layer-2 styles START
+*/
+
+.self {
+  width: 25%;
+  height: 40%;
+  left: 30%;
+  bottom: 47%;
+  background-color: #fff;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 30%;
+    background-color: #f00;
+    position: absolute;
+    bottom: -15%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+  }
+
+  &-head {
+    width: 50%;
+    height: 70%;
+    margin: auto;
+    bottom: 13%;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 40% 60%;
+    border-bottom-left-radius: 40% 60%;
+    background-color: $brown-light;
+    z-index: $z-top;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 110%;
+      height: 70%;
+      margin: auto;
+      position: absolute;
+      left: -100%;
+      right: -100%;
+      background-color: darken($brown-light, 20%);
+      border-top-left-radius: 35%;
+      border-top-right-radius: 35%;
+      border-bottom-right-radius: 40% 60%;
+      border-bottom-left-radius: 40% 60%;
+      z-index: $z-bot;
+    }
+  }
+}
+
+/*
+*   .layer-2 styles END
+*/
+
+
+/*
+*   .layer-3 styles START
+*/
+
+.painting {
+  width: 13%;
+  height: 28%;
+  left: 10%;
+  top: 5%;
+  border: 6px solid #000;
+  background-color: #eee;
+  border-radius: 10px 0 10px 0;
+
+  &-inner {
+    width: 50%;
+    height: 40%;
+    border-radius: 50%;
+    background-color: $blue-med;
+    top: 10%;
+    left: 10%;
+    z-index: $z-top;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      height: 0;
+      width: 0;
+      border-bottom: 16px solid yellow;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      top: 120%;
+      left: 0%;
+      z-index: $z-bot;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+
+      @include breakpoint(tablet) {
+        border-bottom: 32px solid yellow;
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+      }
+    }
+
+    &:after {
+      height: 160%;
+      width: 80%;
+      background-color: #f00;
+      left: 80%;
+      z-index: $z-mid;
+    }
+  }
+}
+
+/*
+*   .layer-3 styles END
+*/
+
+/*
+*  animations
+*/
+
+@keyframes flicker-on {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .8;
+  }
+  51% {
+    opacity: 0;
+  }
+  75% {
+    opacity: .7
+  }
+  77% {
+    opacity: 0;
+  }
+  78% {
+    opacity: .8;
+  }
+  79% {
+    opacity: 0;
+  }
+  80% {
+    opacity: .7;
+  }
+  100% {
+    opacity: .7;
+  }
+}
+
+@keyframes flicker-on-shadow {
+  0% {
+    box-shadow: inset 5px 0px 0px #fff;
+  }
+  49% {
+    box-shadow: inset 5px 0px 0px #fff;
+  }
+  50% {
+    box-shadow: inset 5px 0px 0px #545454;
+  }
+  51% {
+    box-shadow: inset 5px 0px 0px #fff;
+  }
+  75% {
+    box-shadow: inset 5px 0px 0px #545454;
+  }
+  77% {
+    box-shadow: inset 5px 0px 0px #fff;
+  }
+  78% {
+    box-shadow: inset 5px 0px 0px #545454;
+  }
+  79% {
+    box-shadow: inset 5px 0px 0px #fff;
+  }
+  80% {
+    box-shadow: inset 5px 0px 0px #545454;
+  }
+  100% {
+    box-shadow: inset 5px 0px 0px #545454;
+  }
+}
+
+@keyframes leaf-dance {
+  0% {
+
+  }
+  25% {
+    transform: rotate(-6deg);
+  }
+  75% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes leaf-dance-reverse {
+  0% {
+
+  }
+  25% {
+    transform: rotate(6deg);
+  }
+  75% {
+    transform: rotate(-6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes steam {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

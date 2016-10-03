@@ -1,9 +1,9 @@
 ---
 gems: [jekyll-paginate]
-collections:
-  portfolio_items:
-    output: true
-    permalink: /portfolio/:title
+# collections:
+#   portfolio_items:
+#     output: true
+#     permalink: /portfolio/:title
 
 excerpt_separator: "<!--more-->"
 exclude: ['sass/']
